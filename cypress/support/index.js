@@ -18,3 +18,9 @@ import './commands'
 
 // Alternatively you can use CommonJS syntax:
 // require('./commands')
+
+
+//Ignore the XHR logs
+Cypress.Server.defaults({
+    ignore: (xhr) => bool
+})
