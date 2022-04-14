@@ -8,8 +8,12 @@ describe("Test Contact Us form via Automation Test Store", () => {
 
     it("Should be able to submit", () => {
         // cy.get('.info_links_footer > :nth-child(5) > a').click()
+
+        //dynamic selector
+        cy.get("a[href$='contact']").click()
+
         //example of using xpath
-        cy.xpath("//a[contains(@href, 'contact')]").click()
+        // cy.xpath("//a[contains(@href, 'contact')]").click()
         cy.get('#ContactUsFrm_first_name').type('Maksym')
         cy.get('#ContactUsFrm_email').type('test@email.com')
         cy.get('#ContactUsFrm_enquiry').type('Some text Some textSome text')
