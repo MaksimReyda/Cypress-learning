@@ -16,6 +16,7 @@ describe("Test Contact Us form via Automation Test Store", () => {
         // cy.xpath("//a[contains(@href, 'contact')]").click()
         cy.get('#ContactUsFrm_first_name').type('Maksym')
         cy.get('#ContactUsFrm_email').type('test@email.com')
+        cy.get('#ContactUsFrm_email').should('have.attr', 'name', 'email').and('have.attr', 'name', 'email')
         cy.get('#ContactUsFrm_enquiry').type('Some text Some textSome text')
         cy.contains('Submit').click()
 
