@@ -9,7 +9,12 @@ describe("Test Contact Us form via WebdriverUni", () => {
         cy.visit('http://www.webdriveruniversity.com/Contact-Us/contactus.html')
     })
 
-    it("Should be able to submit", () => {
+    it.only("Should be able to submit", () => {
+        cy.document().should('have.property', 'charset').and('eq', 'UTF-8')
+        // cy.document().should('have.attr', 'title').and('eq', 'WebDriver | Contact Us')
+        cy.title().should('include', 'WebDriver | Contact Us')
+        cy.url().should('include', '/Contact-Us/contactus.html')
+        
         cy.get('[name="first_name"]').type('Maksym')
         cy.get('[name="last_name"]').type('Reida')
         cy.get('[name="email"]').type('test@mail.com')
